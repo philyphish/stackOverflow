@@ -15,7 +15,13 @@ namespace StackOverflowPost
             string newPost = Console.ReadLine();
 
             var post = new Post(newPost);
+           
+            Console.WriteLine("Please vote on this post. Type 1 for and up-vote and 0 for a down-vote.");
+            int newVote = Convert.ToInt16(Console.ReadLine());
+            var vote = new Post(newVote);
             
+
+
         }
     }
 }
