@@ -10,6 +10,12 @@ namespace StackOverflowPost
     {
         static void Main(string[] args)
         {
+            
+            Console.WriteLine("Create a post: ");
+            string newPost = Console.ReadLine();
+
+            var post = new Post(newPost);
+            
         }
     }
 }
