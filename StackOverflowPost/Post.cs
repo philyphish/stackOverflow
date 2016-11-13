@@ -6,38 +6,72 @@ using System.Threading.Tasks;
 
 namespace StackOverflowPost
 {
-    class Post
+    public class Post
     {
-        private string title;
-        private string description;
         private DateTime createDate;
-        private int _vote;
         private string _post;
         private int voteCount;
-        public Post(string post)
+        private static int vote;
+
+        public Post()
+        {
+
+        }
+
+        public void upVote()    
+        {
+            vote = ++vote;
+        }
+
+        public void downVote()
+        {
+            vote = --vote;
+        }
+
+        public Post(string tittle, string description, string post)
         {
             this._post = post;
             this.createDate = DateTime.Now;
-            
-            Console.WriteLine(post + " " + createDate + " " +"");
+            Console.WriteLine("Tittle: {0}", tittle);
+            Console.WriteLine("Description: {0}", description);
+            Console.WriteLine("Create Date: {0}", createDate);
+            Console.WriteLine("Ranking: {0}", vote);
+            Console.WriteLine("Post: {0}", post);
         }
-        public Post(int vote)
+
+        public static void voting(int vote)
         {
-            this._vote = vote;
-
-            if (vote == 1)
+            var rank = new Post();
+            switch (vote)
             {
-                voteCount++;
+                case 0:
+                    rank.downVote();
+                    break;
+                case 1:
+                    rank.upVote();
+                    break;
+                    defualt:
+                    Console.WriteLine("Invalid vote.");
             }
-            else if(vote == 0)
-            {
-                voteCount--;
-            }
-            else
-            {
-                Console.WriteLine("This is not a valid vote.");
-            }
-
         }
+        //public Post(int vote)
+        //{
+        //    this._vote = vote;
+
+        //    if (vote == 1)
+        //    {
+        //        voteCount++;
+        //    }
+        //    else if(vote == 0)
+        //    {
+        //        voteCount--;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("This is not a valid vote.");
+        //    }
+
+        //}
+
     }
 }
