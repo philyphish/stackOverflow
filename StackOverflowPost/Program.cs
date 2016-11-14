@@ -22,6 +22,19 @@ namespace StackOverflowPost
             Post.voting(Convert.ToInt16(Console.ReadLine()));
             
             var post = new Post(tittle, description, newPost);
+            Console.WriteLine("Would you like to vote on this post again?");
+            var voteAgain = Console.ReadLine();
+
+            while(voteAgain == "yes")
+            {
+                Console.WriteLine("Please vote on this post. Type 1 for and up-vote and 0 for a down-vote.");
+                Post.voting(Convert.ToInt16(Console.ReadLine()));
+                Console.WriteLine("Vote again?");
+                voteAgain = Console.ReadLine();
+            }
+            //Come back to this. This can't be the best way to do this. 
+            var myPost = new Post(tittle, description, newPost);
+            
         }
     }
 }

@@ -30,8 +30,6 @@ namespace StackOverflowPost
 
         public Post(string tittle, string description, string post)
         {
-            this._post = post;
-            this.createDate = DateTime.Now;
             Console.WriteLine("Tittle: {0}", tittle);
             Console.WriteLine("Description: {0}", description);
             Console.WriteLine("Create Date: {0}", createDate);
@@ -50,28 +48,17 @@ namespace StackOverflowPost
                 case 1:
                     rank.upVote();
                     break;
-                    defualt:
+                    default:
                     Console.WriteLine("Invalid vote.");
+                    break;
             }
+
+        //    Console.WriteLine("Tittle: {0}", tittle);
+        //    Console.WriteLine("Description: {0}", description);
+        //    Console.WriteLine("Create Date: {0}", createDate);
+        //    Console.WriteLine("Ranking: {0}", vote);
+        //    Console.WriteLine("Post: {0}", post);
         }
-        //public Post(int vote)
-        //{
-        //    this._vote = vote;
-
-        //    if (vote == 1)
-        //    {
-        //        voteCount++;
-        //    }
-        //    else if(vote == 0)
-        //    {
-        //        voteCount--;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("This is not a valid vote.");
-        //    }
-
-        //}
 
     }
 }
